@@ -6,7 +6,7 @@
     <v-layout justify-center wrap>
       <v-flex md12>
         <material-card
-                color="green"
+                color="custom-blue"
                 title="Юридические лица">
           <v-flex slot="actions" ma-0 pa-0>
             <v-btn v-ripple

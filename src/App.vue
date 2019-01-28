@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <core-toolbar/>
-
+    
     <core-drawer v-if="$route.name !== 'Вход'"/>
 
     <core-view />

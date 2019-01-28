@@ -3,12 +3,12 @@ import Vue from 'vue'
 import Axios from 'axios'
 
 export const Utils = Object.freeze({
-  buildHeaders: function (auth) {
-    let headers = {}
-    headers[auth.header] = auth.token
-    headers['Content-Type'] = 'application/json'
-    return headers
-  },
+  // buildHeaders: function (auth) {
+  //   let headers = {}
+  //   headers[auth.header] = auth.token
+  //   headers['Content-Type'] = 'application/json'
+  //   return headers
+  // },
   processError (error) {
     let text = error.stack || error
     let serverError = null

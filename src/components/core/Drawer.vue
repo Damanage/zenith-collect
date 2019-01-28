@@ -2,19 +2,18 @@
     <v-navigation-drawer
             id="app-drawer"
             v-model="inputValue"
-            сlass="blue lighten-3"
+            class="custom-blue"
             app
             dark
             floating
-            persistent
+            permanent
             mobile-break-point="991"
             width="260">
-        <v-img
-                :src="image"
-                height="100%">
+        
             <v-layout
                     class="fill-height"
                     tag="v-list"
+                    
                     column>
                 <v-list-tile avatar>
                     <v-list-tile-title class="title text-md-center text-xs-center text-lg-center">
@@ -26,18 +25,18 @@
                         v-for="(link, i) in links"
                         :key="i"
                         :to="link.to"
-                        :active-class="color"
+                        active-class="orange"
                         avatar
                         class="v-list-item">
                     <v-list-tile-action>
-                        <v-icon>{{ link.icon }}</v-icon>
+                        <v-icon >{{ link.icon }}</v-icon>
                     </v-list-tile-action>
-                    <v-list-tile-title
+                    <v-list-tile-title 
                             v-text="link.text"
                     />
                 </v-list-tile>
             </v-layout>
-        </v-img>
+        
     </v-navigation-drawer>
 </template>
 
@@ -51,38 +50,18 @@
   export default {
     data: () => ({
       links: [
-        // {
-        //   to: '/projects',
-        //   icon: 'mdi-home',
-        //   text: 'Проекты'
-        // },
-        // {
-        //   to: '/contacts',
-        //   icon: 'mdi-account-box-multiple',
-        //   text: 'ФЛ'
-        // },
-        // {
-        //   to: '/firms',
-        //   icon: 'mdi-file-cabinet',
-        //   text: 'ЮЛ'
-        // },
-        // {
-        //   to: '/npa',
-        //   icon: 'mdi-domain',
-        //   text: 'НПА'
-        // },
         {
-          to: '/test',
+          to: '/projects',
           icon: 'mdi-home',
           text: 'Домой'
         },
         {
-          to: '/test',
+          to: '/contacts',
           icon: 'mdi-account',
           text: 'Физические лица'
         },
         {
-          to: '/test',
+          to: '/firms',
           icon: 'mdi-city',
           text: 'Юридические лица'
         },
