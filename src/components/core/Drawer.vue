@@ -192,6 +192,7 @@
 
 <style lang="scss">
     #app-drawer {
+      font-family: "Roboto";
       box-shadow: unset !important;
         .mainMenu, .mainMenu-filter{
           margin-left: 5px;
