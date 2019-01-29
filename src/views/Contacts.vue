@@ -6,7 +6,7 @@
         <v-layout justify-center wrap>
             <v-flex md12>
                 <material-card
-                        color="custom-blue"
+                        color="custom-purple"
                         title="Физические лица">
                     <v-flex slot="actions" ma-0 pa-0>
                         <v-btn v-ripple

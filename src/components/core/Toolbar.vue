@@ -36,7 +36,7 @@
                 :loading="loading"
                 :disabled="loading"
                 flat
-                class="custom-blue"
+                class="custom-purple"
                 @click="loader = 'loading'"
                 >
                 
