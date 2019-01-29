@@ -1,11 +1,39 @@
 <template>
+
     <v-container
             fill-height
             fluid
-            grid-list-xl pa-3>
+            grid-list-xl pa-3
+          
+          >
+
         <v-layout justify-center wrap>
             <v-flex md12>
-                <material-card
+              
+              <v-tabs
+                v-model="active"
+                color="custom-purple"
+                class="tabs-customize"
+                dark
+                slider-color="orange"
+                >
+
+              
+                <v-tab
+                  v-for="(tab, i) in tabs"
+                  :key="i"
+                  class="tab-menu-title"
+                  ripple
+                  >
+                  {{tab.name}} 
+                </v-tab>
+                <v-tab-item
+                  v-for="(tab, i) in tabs"
+                  :key="i"
+                  >
+                  
+
+                  <material-card
                         color="custom-purple"
                         title="Проекты">
                     <v-flex slot="actions" ma-0 pa-0>
@@ -27,18 +55,22 @@
                                 <v-icon color="primary" @click="editItem(props.item)">mdi-pencil-circle-outline</v-icon>
 
                             </td>
-                            <td>{{ props.item.full_name }}</td>
-                            <td>{{ props.item.responsible }}</td>
-                            <td>{{ props.item.status }}</td>
-                            <td>{{ props.item.date_open | date }}</td>
-                            <td>{{ props.item.date_close | date }}</td>
-                            <td>{{ props.item.comment }}</td>
-                            <td>{{ props.item.problem_status }}</td>
-                            <td>{{ props.item.problem_reason }}</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7/td>
+                            <td>8</td>
                         </template>
                     </v-data-table>
                 </material-card>
+
+                </v-tab-item>
+              </v-tabs>
             </v-flex>
+            
         </v-layout>
     </v-container>
 </template>
@@ -65,6 +97,48 @@
           { text: 'Комментарий', value: 'comment', sortable: false },
           { text: 'Причина проблемности', value: 'problem_status', sortable: false },
           { text: 'Статус проблемности', value: 'problem_reason', sortable: false }
+        ],
+        tabs: [
+          {
+            name: "Субъект проекта",
+            content: "cont1"
+          },
+          {
+            name: "Кредитные договоры",
+            content: "cont1"
+          },
+          {
+            name: "График погашения",
+            content: "cont2"
+          },
+          {
+            name: "Договоры поручительства",
+            content: "cont3"
+          },
+          {
+            name: "Договоры залога",
+            content: "cont3"
+          },
+          {
+            name: "Объекты залога",
+            content: "cont3"
+          },
+          {
+            name: "Бюджет",
+            content: "cont3"
+          },
+          {
+            name: "Риски",
+            content: "cont3"
+          },
+          {
+            name: "Стратегии",
+            content: "cont3"
+          },
+          {
+            name: "Задачи",
+            content: "cont3"
+          }
         ]
       }
     },
@@ -86,5 +160,21 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss">
+  .v-tabs__container{
+    justify-content: space-evenly;
+  } 
+  .tab-menu-title{
+    white-space: pre-wrap;
+  }
+  .v-tabs__div{
+    max-width: 120px !important;
+  }
+  .tabs-customize{
+    border-radius: 4px;
+  }
+  .v-window{
+    margin-top: 45px;
+  }
+      
 </style>
