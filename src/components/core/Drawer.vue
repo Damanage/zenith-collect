@@ -218,6 +218,7 @@
             font-weight: bold;
           }
           .filter-subitem{
+            font-size: 11px !important;
             padding-top: 0;
             padding-right: 15px;
             padding-bottom: 0;
