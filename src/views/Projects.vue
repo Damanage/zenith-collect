@@ -11,7 +11,8 @@
             <v-flex md12>
               
               <v-tabs
-                v-model="active"
+                
+                v-model="tabinator"
                 color="custom-purple"
                 class="tabs-customize"
                 dark
@@ -20,6 +21,7 @@
 
               
                 <v-tab
+                  
                   v-for="(tab, i) in tabs"
                   :key="i"
                   class="tab-menu-title"
@@ -27,77 +29,70 @@
                   >
                   {{tab.name}} 
                 </v-tab>
-                <v-tab-item
-                  v-for="(tab, i) in tabs"
-                  :key="i"
-                  >
-                  
-
-                  <material-card
-                        color="custom-purple"
-                        title="Проекты">
-                    <v-flex slot="actions" ma-0 pa-0>
-                        <v-btn v-ripple
-                               flat small
-                               @click="">
-                            <v-icon>mdi-plus</v-icon>
-                            Создать
-                        </v-btn>
-                    </v-flex>
-                    <v-data-table
-                            :headers="headers"
-                            :items="projects"
-                            :rows-per-page-text="'Страницы'"
-                            :no-data-text="'Ничего не найдено'"
-                            :rows-per-page-items="rowsPerPage">
-                        <template slot="items" slot-scope="props">
-                            <td class="justify-center pa-0">
-                                <v-icon color="primary" @click="editItem(props.item)">mdi-pencil-circle-outline</v-icon>
-
-                            </td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7/td>
-                            <td>8</td>
-                        </template>
-                    </v-data-table>
-                </material-card>
-
-                </v-tab-item>
               </v-tabs>
+              <v-tabs-items v-model="tabinator" >
+                <v-tab-item>
+                  <subject/>
+                </v-tab-item>  
+                
+
+                <v-tab-item>
+                  {{test}}
+                  credit contract
+                </v-tab-item>
+
+                <v-tab-item>
+                  charts of repayment
+                </v-tab-item>
+
+                <v-tab-item>
+                  guarantors contracts
+                </v-tab-item>
+                
+                <v-tab-item>
+                  pledge contracts
+                </v-tab-item>
+
+                <v-tab-item>
+                  pledge objects
+                </v-tab-item>
+
+                <v-tab-item>
+                  balance
+                </v-tab-item>
+
+                <v-tab-item>
+                  to risk
+                </v-tab-item>
+
+                <v-tab-item>
+                  Strategy
+                </v-tab-item>
+
+                <v-tab-item>
+                  Tasks
+                </v-tab-item>
+              </v-tabs-items>
+                
+
+              
             </v-flex>
+
+            
             
         </v-layout>
     </v-container>
 </template>
 
 <script>
-  import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
+  import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
+  import subject  from '../components/projectpage-tabs/subject.vue';
 
-  export default {
+
+   export default {
     data () {
       return {
-        rowsPerPage: [10, 20, 30, 100, { 'text': 'Все', 'value': -1 }],
-        headers: [
-          { text: '', value: 'action', sortable: false },
-          {
-            text: 'Название проекта',
-            align: 'left',
-            sortable: true,
-            value: 'full_name'
-          },
-          { text: 'Ответственный', value: 'resp_id' },
-          { text: 'Статус', value: 'status' },
-          { text: 'Дата открытия', value: 'date_open', sortable: true },
-          { text: 'Дата закрытия', value: 'date_close', sortable: true },
-          { text: 'Комментарий', value: 'comment', sortable: false },
-          { text: 'Причина проблемности', value: 'problem_status', sortable: false },
-          { text: 'Статус проблемности', value: 'problem_reason', sortable: false }
-        ],
+        tabinator: null,
         tabs: [
           {
             name: "Субъект проекта",
@@ -139,14 +134,19 @@
             name: "Задачи",
             content: "cont3"
           }
-        ]
+        ],
+        test: `<subject/>`
       }
     },
+    
     computed: {
       ...mapGetters({
         projects: 'getProjects'
       })
     },
+    components: {
+		  subject
+	  },
     methods: {
       ...mapActions({
         loadProjects: 'loadProjects'
