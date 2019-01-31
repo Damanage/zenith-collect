@@ -29,7 +29,7 @@
   width: 93vw;
 }
 .zn-sidebar{
-  z-index: 3;
+  z-index: 4;
   margin-top: 30px !important;
   margin-left: 30px !important;
   margin-bottom: 10px;
