@@ -26,7 +26,7 @@
 
         <!-- <v-spacer /> -->
         <v-toolbar-items v-if="title !== 'Вход'">
-          <v-flex class="toolbar-flex"
+          <v-flex class="toolbar-flex right-toolbar"
             align-center
             layout
             py-2>
@@ -50,7 +50,7 @@
                 color="white"
                 v-model="show"
               >
-                <span style="color:orange" slot="badge">8</span>
+                <span style="color:orange; font-size: 10px;" slot="badge">8</span>
                 <v-select
                   dark
                   color="#04AFC4"
@@ -183,6 +183,12 @@ export default {
 </script>
 
 <style>
+  .right-toolbar button, label{
+    font-size: 12px !important;
+  }
+  .v-toolbar .v-toolbar__content .v-toolbar__title{
+    font-size: 15px !important;
+  }
   #core-toolbar a {
     text-decoration: none;
   }
