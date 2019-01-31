@@ -8,7 +8,7 @@
     style="background: #eee;"
     >
     
-    <v-layout class="header-custom-style" justify-center>
+    <v-layout class="header-custom-style filter-gray" justify-center>
       <div class="v-toolbar-title">
 
         <v-toolbar-title
@@ -203,7 +203,7 @@ export default {
     align-items: center;
   }
   .header-custom-style{
-    background: orange;
+    /* background: orange; */
     border-radius: 4px;
   }
   .tb-item{
