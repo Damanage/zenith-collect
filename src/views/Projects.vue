@@ -160,17 +160,21 @@
     }
   }
 </script>
+
+
 <style lang="scss">
   .v-tabs__container{
     justify-content: space-evenly;
   } 
   .tab-menu-title{
+    font-size: 11px !important;
     white-space: pre-wrap;
   }
   .v-tabs__div{
     max-width: 120px !important;
   }
   .tabs-customize{
+    font-size: 10px;
     border-radius: 4px;
   }
   .v-window{
