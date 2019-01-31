@@ -10,6 +10,23 @@
         <v-layout justify-center wrap>
             <v-flex md12>
               
+              <material-card class="project-card-desc" color="custom-purple">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione tempore itaque totam ad exercitationem. Beatae accusantium consectetur recusandae qui, in alias quasi, obcaecati accusamus aut distinctio eligendi sunt sapiente possimus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sit vitae, optio incidunt accusantium eum laudantium, voluptatum tempore similique nam minima illum! Deleniti iure fugiat distinctio minima enim, ducimus eveniet.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+              </material-card>
+              <material-card class="project-card-desc" color="custom-purple">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+              </material-card>
+              <material-card class="project-card-desc" color="custom-purple">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+              </material-card>
+
+            </v-flex>
+
+
+            <v-flex md12>
+              
               <v-tabs
                 
                 v-model="tabinator"
@@ -163,6 +180,9 @@
 
 
 <style lang="scss">
+  .project-card-desc{
+    margin-top: 10px;
+  }
   .v-tabs__container{
     justify-content: space-evenly;
   } 
