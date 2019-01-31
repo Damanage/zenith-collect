@@ -14,6 +14,9 @@
 
 /* Remove in 1.2 */
 /* temp custom layout for demo*/
+.application{
+  background-color: white !important;
+}
 .app-background{
   left: 99px;
   top: 13px;
