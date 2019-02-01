@@ -57,6 +57,7 @@
       }
     },
     methods: {
+      
       snack (msg, type) {
         this.message = msg
         this.color = this.colors[type || 2]
@@ -81,10 +82,14 @@
       } catch (e) {
         console.log(e)
       }
+      
+      
     },
+    
     beforeDestroy () {
       unwatcher1();
     }
+
   }
 </script>
 

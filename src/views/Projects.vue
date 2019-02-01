@@ -9,7 +9,7 @@
 
         <v-layout justify-center wrap>
             <v-flex md12>
-              
+              <a href="#tabsAnchor">Waaagh!</a>
               <material-card class="project-card-desc" color="custom-purple">
                 <v-container fluid pa-0>
                   <v-layout pa-0 class="card-header-wrp">
@@ -265,7 +265,7 @@
             <v-flex md12>
               
               <v-tabs
-                
+                id="tabsAnchor"
                 v-model="tabinator"
                 color="weed-green"
                 class="tabs-customize"
@@ -331,7 +331,6 @@
 
               
             </v-flex>
-
             
             
         </v-layout>
@@ -341,11 +340,18 @@
 <script>
   import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
   import subject  from '../components/projectpage-tabs/subject.vue';
-
+  import * as easings from 'vuetify/es5/util/easing-patterns'
 
    export default {
+    
     data () {
       return {
+        scrollH: 0,
+        scrolled: false,
+        type: 'number',
+        selector: '#first',
+        easing: 'easeInOutCubic',
+        easings: Object.keys(easings),
         valid: false,
         tabinator: null,
         firstname: '',
@@ -409,7 +415,20 @@
     computed: {
       ...mapGetters({
         //projects: 'getProjects'
-      })
+      }),
+      target () {
+        // const value = this[this.type]
+        // if (!isNaN(value)) return Number(value)
+        // else return value
+        return '#tabsAnchor'
+      },
+      options () {
+        return {
+          duration: 300,
+          offset: 0,
+          easing: 'easeInOutCubic'
+        }
+      },
     },
     components: {
 		  subject
@@ -420,6 +439,26 @@
       }),
       editItem (project) {
         //this.$router.push(`/editproject/${project.id}`)
+      },
+      debug(tst){
+        console.log(tst)
+      }
+    },
+    mounted(){
+      if(this.scrolled === false){
+        let elem = document.getElementsByClassName("v-content__wrap");
+        elem[0].addEventListener('scroll', (e)=>{
+          if(e.target.scrollTop > this.scrollH){
+            console.log("riding to the bottom");
+            let subElem = document.getElementById("tabsAnchor");
+            subElem.scrollIntoView();
+          } else {
+            console.log("riding to the top")
+          }
+          
+          this.scrollH = e.target.scrollTop
+        
+        },false);
       }
     },
     created () {
@@ -432,6 +471,9 @@
 <style lang="scss">
   .card-header-wrp{
     margin: -16px -16px 0px -16px !important;
+  }
+  #core-view{
+    height: 183vh;
   }
   .card-header{
     color: #54676F;

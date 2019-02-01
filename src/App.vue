@@ -11,12 +11,10 @@
 
 <style lang="scss">
 @import '@/styles/index.scss';
-body{
-  user-zoom: fixed;
-}
+
 body::before{
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 1;
@@ -31,8 +29,8 @@ body::before{
 }
 .application{
   background: transparent !important;
-  margin-top: 10vh;
-  height: 90vh;
+  // margin-top: 10vh;
+  // height: 90vh;
   overflow: hidden;
   
 }
@@ -76,8 +74,16 @@ body::before{
   padding-right: 30px !important;
 }
 .zn-content{
+  overflow: hidden;
+  height: 90vh;
+  position: fixed;
+  top: 10vh;
   z-index: 3;
   margin: -4px 30px 30px 30px !important;
+}
+.v-content__wrap{
+  overflow: scroll;
+  // scroll-behavior: smooth;
 }
 .v-datatable thead th.column.sortable i {
   vertical-align: unset;
