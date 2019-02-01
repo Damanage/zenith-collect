@@ -267,10 +267,10 @@
               <v-tabs
                 
                 v-model="tabinator"
-                color="custom-purple"
+                color="weed-green"
                 class="tabs-customize"
                 dark
-                slider-color="orange"
+                slider-color="#75CACF"
                 >
 
               

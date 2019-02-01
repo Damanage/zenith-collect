@@ -1,7 +1,7 @@
 <template>
 	<div class="subj">
         <material-card
-                color="custom-purple"
+                color="filter-green"
                 title="Проекты">
             <v-flex class="subject-root" slot="actions" ma-0 pa-0>
                 <div class="left-side">
@@ -25,7 +25,7 @@
                     </div>
                     
                     <div class="buttons">
-                        <v-btn class="orange" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
+                        <v-btn class="weed-green" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-plus</v-icon>Добавить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-pencil</v-icon>Изменить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-close</v-icon>Удалить</v-btn>
@@ -57,7 +57,7 @@
 
         <material-card
                 style="margin-top: 50px"
-                color="custom-purple"
+                color="filter-green"
                 title="Проекты">
             <v-flex class="subject-root" slot="actions" ma-0 pa-0>
                 <div class="left-side">
@@ -81,7 +81,7 @@
                     </div>
                     
                     <div class="buttons">
-                        <v-btn class="orange" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
+                        <v-btn class="weed-green" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-plus</v-icon>Добавить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-pencil</v-icon>Изменить</v-btn>
                         <v-btn flat small color="white"><v-icon color="white">mdi-close</v-icon>Удалить</v-btn>

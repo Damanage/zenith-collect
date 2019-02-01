@@ -8,7 +8,7 @@
     style="background: #eee;"
     >
     
-    <v-layout class="header-custom-style filter-gray" justify-center>
+    <v-layout class="header-custom-style filter-green" justify-center>
       <div class="v-toolbar-title">
 
         <v-toolbar-title
@@ -36,7 +36,7 @@
                 :loading="loading"
                 :disabled="loading"
                 flat
-                class="custom-purple"
+                class="weed-green"
                 @click="loader = 'loading'"
                 >
                 
@@ -50,7 +50,7 @@
                 color="white"
                 v-model="show"
               >
-                <span style="color:orange; font-size: 10px;" slot="badge">8</span>
+                <span style="color:#75CACF; font-size: 10px;" slot="badge">8</span>
                 <v-select
                   dark
                   color="#04AFC4"

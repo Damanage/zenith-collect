@@ -10,12 +10,12 @@
             width="260">
         
             <v-layout
-                    class="custom-purple mainMenu"
+                    class="white mainMenu"
                     tag="v-list"
                     
                     column>
                 <v-list-tile avatar>
-                  <v-list-tile-title class="title text-md-center text-xs-center text-lg-center">
+                  <v-list-tile-title style="color: #91AE61;" class="title text-md-center text-xs-center text-lg-center">
                       ДОЛГОВОЙ ЦЕНТР
                   </v-list-tile-title>
                 </v-list-tile>
@@ -24,7 +24,7 @@
                           v-for="(link, i) in links"
                           :key="i"
                           :to="link.to"
-                          active-class="orange"
+                          active-class="weed-green--active"
                           avatar
                           class="v-list-item mainMenu-item">
                       <v-list-tile-action>
@@ -38,7 +38,7 @@
                 
             </v-layout>
             <v-layout
-                    class="filter-gray mainMenu-filter"
+                    class="filter-green mainMenu-filter"
                     tag="v-list"
                     column>
               <v-expansion-panel>
@@ -53,7 +53,7 @@
                     class="v-list-item"
                   >
                     <v-list-tile-action>
-                      <v-icon color="orange">{{filter.icon}}</v-icon>
+                      <v-icon color="#91AE61">{{filter.icon}}</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-title
                       class="filter-item"
@@ -207,7 +207,8 @@
             flex-direction: column;
             justify-content: flex-start;
             padding: 15px 0;
-            .mainMenu-item a{
+            .mainMenu-item a,i{
+              color: #495057;
               padding: 5px 15px !important;
             }
           }

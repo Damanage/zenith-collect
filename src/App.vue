@@ -11,17 +11,27 @@
 
 <style lang="scss">
 @import '@/styles/index.scss';
-
+body::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  background-image: url('../public/img/zenith_bg-min.jpg') !important;
+  background-size: cover;
+  filter: opacity(70%);
+}
 /* Remove in 1.2 */
 /* temp custom layout for demo*/
 ::-webkit-scrollbar { 
   display: none; 
 }
 .application{
+  background: transparent !important;
   margin-top: 10vh;
   height: 90vh;
   overflow: hidden;
-  background-color: white !important;
+  
 }
 
 .application--wrap{
@@ -44,7 +54,7 @@
   border-radius: 4px;
   // background: linear-gradient(0deg, #F1F1FF, #F1F1FF), #EEEEEE;
   z-index: 1;
-  background-color: #F1F1FF;
+  background:rgba(59, 103, 112, 0.7);
   height: 85vh;
   width: 93vw;
 }
