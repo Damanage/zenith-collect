@@ -11,15 +11,252 @@
             <v-flex md12>
               
               <material-card class="project-card-desc" color="custom-purple">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione tempore itaque totam ad exercitationem. Beatae accusantium consectetur recusandae qui, in alias quasi, obcaecati accusamus aut distinctio eligendi sunt sapiente possimus!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sit vitae, optio incidunt accusantium eum laudantium, voluptatum tempore similique nam minima illum! Deleniti iure fugiat distinctio minima enim, ducimus eveniet.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+                <v-container fluid pa-0>
+                  <v-layout pa-0 class="card-header-wrp">
+                    <v-flex class="text-md-center card-header">
+                      Общие
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+                <v-form v-model="valid">
+
+                  <v-container>
+                    <v-layout>
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          color="orange"
+                          v-model="firstname"
+                          label="Наименование проекта"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          v-model="lastname"
+                          label="Тип проекта"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          v-model="email"
+                          label="Статус проекта"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+
+                  <v-container>
+                    <v-layout>
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          color="orange"
+                          v-model="firstname"
+                          readonly
+                          label="Дата открытия"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          v-model="lastname"
+                          readonly
+                          label="Дата закрытия"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          v-model="email"
+                          :rules="emailRules"
+                          label="Куратор проекта"
+                          color="orange"
+                          readonly
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+
+                </v-form>
               </material-card>
+
+
               <material-card class="project-card-desc" color="custom-purple">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+                <v-form>
+                  <v-container>
+                    <v-layout>
+                      <v-flex
+                        xs8
+                        >
+                        <v-text-field
+                          readonly
+                          value="u dont know"
+                          color="orange"
+                          v-model="firstname"
+                          label="Субъекты проекта"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                      <v-flex
+                        xs4
+                        >
+                        <v-text-field
+                          readonly
+                          color="orange"
+                          v-model="troubleStatus"
+                          label="Статус проблемности"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+
+                    <v-layout>
+                      <v-flex
+                        xs8
+                        >
+                        <v-text-field
+                          readonly
+                          color="orange"
+                          v-model="firstname"
+                          label="Стратегия"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                      <v-flex
+                        xs4
+                        >
+                        <v-text-field
+                          color="orange"
+                          v-model="firstname"
+                          label="Причина проблемности"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-form>
               </material-card>
+
               <material-card class="project-card-desc" color="custom-purple">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eligendi qui numquam iste doloribus, quas dolorem vero cumque odio aliquam magnam inventore perspiciatis delectus omnis pariatur laborum itaque amet explicabo!
+                <v-form v-model="valid">
+                  <v-container>
+                    <v-layout>
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          color="orange"
+                          v-model="firstname"
+                          label="Менеджер проекта"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          v-model="lastname"
+                          label="Балансодержатель"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          readonly
+                          v-model="email"
+                          label="Текущая задолженность"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+
+                  <v-container>
+                    <v-layout>
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          color="orange"
+                          v-model="firstname"
+                          readonly
+                          label="Задолженность на дату открытия"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          v-model="lastname"
+                          readonly
+                          label="Бюджет проекта"
+                          color="orange"
+                          required
+                        ></v-text-field>
+                      </v-flex>
+
+                      <v-flex
+                        xs12
+                        md4
+                      >
+                        <v-text-field
+                          v-model="email"
+                          :rules="emailRules"
+                          label="Фактические расходы"
+                          color="orange"
+                          readonly
+                          required
+                        ></v-text-field>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+
+                </v-form>
               </material-card>
 
             </v-flex>
@@ -109,7 +346,11 @@
    export default {
     data () {
       return {
+        valid: false,
         tabinator: null,
+        firstname: '',
+        lastname: '',
+        troubleStatus: 'Большой парень - большие проблемы',
         tabs: [
           {
             name: "Субъект проекта",
@@ -152,7 +393,16 @@
             content: "cont3"
           }
         ],
-        test: `<subject/>`
+        test: `<subject/>`,
+        nameRules: [
+          v => !!v || 'Введите имя',
+          v => v.length <= 10 || 'Имя должно быть не больше 3 символов'
+        ],
+        email: '',
+        emailRules: [
+          v => !!v || 'введите cтатус',
+          v => /.+@.+/.test(v) || 'E-mail должен соответствовать стандарту email@post.com'
+        ]
       }
     },
     
@@ -180,6 +430,14 @@
 
 
 <style lang="scss">
+  .card-header-wrp{
+    margin: -16px -16px 0px -16px !important;
+  }
+  .card-header{
+    color: #54676F;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+  }
   .project-card-desc{
     margin-top: 10px;
   }
