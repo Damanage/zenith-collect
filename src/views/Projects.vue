@@ -28,7 +28,7 @@
                       >
                         <v-text-field
                           readonly
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           label="Наименование проекта"
                           required
@@ -43,7 +43,7 @@
                           readonly
                           v-model="lastname"
                           label="Тип проекта"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -56,7 +56,7 @@
                           readonly
                           v-model="email"
                           label="Статус проекта"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -70,7 +70,7 @@
                         md4
                       >
                         <v-text-field
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           readonly
                           label="Дата открытия"
@@ -86,7 +86,7 @@
                           v-model="lastname"
                           readonly
                           label="Дата закрытия"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -99,7 +99,7 @@
                           v-model="email"
                           :rules="emailRules"
                           label="Куратор проекта"
-                          color="orange"
+                          color="#75CACF"
                           readonly
                           required
                         ></v-text-field>
@@ -121,7 +121,7 @@
                         <v-text-field
                           readonly
                           value="u dont know"
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           label="Субъекты проекта"
                           required
@@ -132,7 +132,7 @@
                         >
                         <v-text-field
                           readonly
-                          color="orange"
+                          color="#75CACF"
                           v-model="troubleStatus"
                           label="Статус проблемности"
                           required
@@ -146,7 +146,7 @@
                         >
                         <v-text-field
                           readonly
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           label="Стратегия"
                           required
@@ -156,7 +156,7 @@
                         xs4
                         >
                         <v-text-field
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           label="Причина проблемности"
                           required
@@ -177,7 +177,7 @@
                       >
                         <v-text-field
                           readonly
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           label="Менеджер проекта"
                           required
@@ -192,7 +192,7 @@
                           readonly
                           v-model="lastname"
                           label="Балансодержатель"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -205,7 +205,7 @@
                           readonly
                           v-model="email"
                           label="Текущая задолженность"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -219,7 +219,7 @@
                         md4
                       >
                         <v-text-field
-                          color="orange"
+                          color="#75CACF"
                           v-model="firstname"
                           readonly
                           label="Задолженность на дату открытия"
@@ -235,7 +235,7 @@
                           v-model="lastname"
                           readonly
                           label="Бюджет проекта"
-                          color="orange"
+                          color="#75CACF"
                           required
                         ></v-text-field>
                       </v-flex>
@@ -248,7 +248,7 @@
                           v-model="email"
                           :rules="emailRules"
                           label="Фактические расходы"
-                          color="orange"
+                          color="#75CACF"
                           readonly
                           required
                         ></v-text-field>
@@ -408,7 +408,7 @@
     
     computed: {
       ...mapGetters({
-        projects: 'getProjects'
+        //projects: 'getProjects'
       })
     },
     components: {
@@ -419,11 +419,11 @@
         loadProjects: 'loadProjects'
       }),
       editItem (project) {
-        this.$router.push(`/editproject/${project.id}`)
+        //this.$router.push(`/editproject/${project.id}`)
       }
     },
     created () {
-      this.loadProjects()
+      //this.loadProjects()
     }
   }
 </script>
