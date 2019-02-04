@@ -76,9 +76,10 @@ body::before{
 }
 .zn-content{
   overflow: hidden;
-  height: 90vh;
+  // height: 90vh;
   position: fixed;
-  top: 10vh;
+  top: 121px;
+  height: 100%;
   z-index: 3;
   margin: -4px 30px 30px 30px !important;
 }

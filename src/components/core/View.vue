@@ -95,6 +95,7 @@
 
 <style>
     #core-view {
+        height: auto !important;
         padding-bottom: 100px;
     }
 </style>

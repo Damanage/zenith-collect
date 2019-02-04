@@ -1,118 +1,16 @@
 <template>
   
     <v-container
-            fill-height
+            
             fluid
             grid-list-xl pa-3
           >
         <v-layout justify-center wrap>
             
             <v-flex md12>
-                  <material-card class="project-card-desc" color="custom-purple">
-                    
-                  </material-card>
-
-
-                  <!-- <material-card class="project-card-desc" color="custom-purple">
-                    <v-form>
-                      <v-container>
-                        <v-layout>
-                          <v-flex
-                            xs8
-                            >
-                            <v-text-field
-                              readonly
-                              value="u dont know"
-                              color="#75CACF"
-                              v-model="firstname"
-                              label="Субъекты проекта"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-                          <v-flex
-                            xs4
-                            >
-                            <v-text-field
-                              readonly
-                              color="#75CACF"
-                              v-model="troubleStatus"
-                              label="Статус проблемности"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-                        </v-layout>
-
-                        <v-layout>
-                          <v-flex
-                            xs8
-                            >
-                            <v-text-field
-                              readonly
-                              color="#75CACF"
-                              v-model="firstname"
-                              label="Стратегия"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-                          <v-flex
-                            xs4
-                            >
-                            <v-text-field
-                              color="#75CACF"
-                              v-model="firstname"
-                              label="Причина проблемности"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-                        </v-layout>
-                      </v-container>
-                    </v-form>
-                  </material-card> -->
-
-                  <!-- <material-card class="project-card-desc" color="custom-purple">
+                  <!-- Заглушка для ширины. спешил -->
+                  <material-card id="placeholderWidth" class="project-card-desc" color="custom-purple">
                     <v-form v-model="valid">
-                      <v-container>
-                        <v-layout>
-                          <v-flex
-                            xs12
-                            md4
-                          >
-                            <v-text-field
-                              readonly
-                              color="#75CACF"
-                              v-model="firstname"
-                              label="Менеджер проекта"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-
-                          <v-flex
-                            xs12
-                            md4
-                          >
-                            <v-text-field
-                              readonly
-                              v-model="lastname"
-                              label="Балансодержатель"
-                              color="#75CACF"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-
-                          <v-flex
-                            xs12
-                            md4
-                          >
-                            <v-text-field
-                              readonly
-                              v-model="email"
-                              label="Текущая задолженность"
-                              color="#75CACF"
-                              required
-                            ></v-text-field>
-                          </v-flex>
-                        </v-layout>
-                      </v-container>
 
                       <v-container>
                         <v-layout>
@@ -124,7 +22,6 @@
                               color="#75CACF"
                               v-model="firstname"
                               readonly
-                              label="Задолженность на дату открытия"
                               required
                             ></v-text-field>
                           </v-flex>
@@ -136,7 +33,6 @@
                             <v-text-field
                               v-model="lastname"
                               readonly
-                              label="Бюджет проекта"
                               color="#75CACF"
                               required
                             ></v-text-field>
@@ -149,7 +45,6 @@
                             <v-text-field
                               v-model="email"
                               :rules="emailRules"
-                              label="Фактические расходы"
                               color="#75CACF"
                               readonly
                               required
@@ -159,15 +54,15 @@
                       </v-container>
 
                     </v-form>
-                  </material-card> -->
+                  </material-card>
               
               
               
               
               
               <v-expansion-panel >
-                <v-expansion-panel-content>
-                  <div slot="header">Карточка проекта</div>
+                <v-expansion-panel-content class="collapse-header">
+                  <div slot="header" >Карточка проекта</div>
                   
                   <material-card class="project-card-desc" color="custom-purple">
                     <v-container fluid pa-0>
@@ -650,6 +545,33 @@
 
 
 <style lang="scss">
+  #placeholderWidth{
+    margin-top: -150px;
+    margin-bottom: 4px;
+    opacity: 0.5;
+  }
+
+  .theme--light.v-expansion-panel .collapse-header {
+    background-color: transparent;
+    .v-expansion-panel__header{
+      border-radius: 4px;
+      background-color: white ;
+    }
+  }
+  .v-expansion-panel__body{
+    padding: 0 1px;
+    
+    border-radius: 4px;
+  }
+  .theme--light.v-expansion-panel .v-expansion-panel__container{
+    
+  }
+  .project-card-desc{
+    border-radius: 4px !important;
+  }
+  .v-expansion-panel__container{
+    border-radius: 4px;
+  }
   .card-header-wrp{
     margin: -16px -16px 0px -16px !important;
   }
