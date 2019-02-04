@@ -1,264 +1,425 @@
 <template>
-
+  
     <v-container
             fill-height
             fluid
             grid-list-xl pa-3
-          
           >
-
         <v-layout justify-center wrap>
+            
             <v-flex md12>
-              <a href="#tabsAnchor">Waaagh!</a>
-              <material-card class="project-card-desc" color="custom-purple">
-                <v-container fluid pa-0>
-                  <v-layout pa-0 class="card-header-wrp">
-                    <v-flex class="text-md-center card-header">
-                      Общие
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-                <v-form v-model="valid">
-
-                  <v-container>
-                    <v-layout>
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          color="#75CACF"
-                          v-model="firstname"
-                          label="Наименование проекта"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          v-model="lastname"
-                          label="Тип проекта"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          v-model="email"
-                          label="Статус проекта"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-
-                  <v-container>
-                    <v-layout>
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          color="#75CACF"
-                          v-model="firstname"
-                          readonly
-                          label="Дата открытия"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          v-model="lastname"
-                          readonly
-                          label="Дата закрытия"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          v-model="email"
-                          :rules="emailRules"
-                          label="Куратор проекта"
-                          color="#75CACF"
-                          readonly
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-
-                </v-form>
-              </material-card>
+                  <material-card class="project-card-desc" color="custom-purple">
+                    
+                  </material-card>
 
 
-              <material-card class="project-card-desc" color="custom-purple">
-                <v-form>
-                  <v-container>
-                    <v-layout>
-                      <v-flex
-                        xs8
-                        >
-                        <v-text-field
-                          readonly
-                          value="u dont know"
-                          color="#75CACF"
-                          v-model="firstname"
-                          label="Субъекты проекта"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                      <v-flex
-                        xs4
-                        >
-                        <v-text-field
-                          readonly
-                          color="#75CACF"
-                          v-model="troubleStatus"
-                          label="Статус проблемности"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
+                  <!-- <material-card class="project-card-desc" color="custom-purple">
+                    <v-form>
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs8
+                            >
+                            <v-text-field
+                              readonly
+                              value="u dont know"
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Субъекты проекта"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                          <v-flex
+                            xs4
+                            >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="troubleStatus"
+                              label="Статус проблемности"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
 
-                    <v-layout>
-                      <v-flex
-                        xs8
-                        >
-                        <v-text-field
-                          readonly
-                          color="#75CACF"
-                          v-model="firstname"
-                          label="Стратегия"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                      <v-flex
-                        xs4
-                        >
-                        <v-text-field
-                          color="#75CACF"
-                          v-model="firstname"
-                          label="Причина проблемности"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
-                </v-form>
-              </material-card>
+                        <v-layout>
+                          <v-flex
+                            xs8
+                            >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Стратегия"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                          <v-flex
+                            xs4
+                            >
+                            <v-text-field
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Причина проблемности"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+                    </v-form>
+                  </material-card> -->
 
-              <material-card class="project-card-desc" color="custom-purple">
-                <v-form v-model="valid">
-                  <v-container>
-                    <v-layout>
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          color="#75CACF"
-                          v-model="firstname"
-                          label="Менеджер проекта"
-                          required
-                        ></v-text-field>
-                      </v-flex>
+                  <!-- <material-card class="project-card-desc" color="custom-purple">
+                    <v-form v-model="valid">
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Менеджер проекта"
+                              required
+                            ></v-text-field>
+                          </v-flex>
 
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          v-model="lastname"
-                          label="Балансодержатель"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="lastname"
+                              label="Балансодержатель"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
 
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          readonly
-                          v-model="email"
-                          label="Текущая задолженность"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="email"
+                              label="Текущая задолженность"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
 
-                  <v-container>
-                    <v-layout>
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          color="#75CACF"
-                          v-model="firstname"
-                          readonly
-                          label="Задолженность на дату открытия"
-                          required
-                        ></v-text-field>
-                      </v-flex>
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              color="#75CACF"
+                              v-model="firstname"
+                              readonly
+                              label="Задолженность на дату открытия"
+                              required
+                            ></v-text-field>
+                          </v-flex>
 
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          v-model="lastname"
-                          readonly
-                          label="Бюджет проекта"
-                          color="#75CACF"
-                          required
-                        ></v-text-field>
-                      </v-flex>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="lastname"
+                              readonly
+                              label="Бюджет проекта"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
 
-                      <v-flex
-                        xs12
-                        md4
-                      >
-                        <v-text-field
-                          v-model="email"
-                          :rules="emailRules"
-                          label="Фактические расходы"
-                          color="#75CACF"
-                          readonly
-                          required
-                        ></v-text-field>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="email"
+                              :rules="emailRules"
+                              label="Фактические расходы"
+                              color="#75CACF"
+                              readonly
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
 
-                </v-form>
-              </material-card>
+                    </v-form>
+                  </material-card> -->
+              
+              
+              
+              
+              
+              <v-expansion-panel >
+                <v-expansion-panel-content>
+                  <div slot="header">Карточка проекта</div>
+                  
+                  <material-card class="project-card-desc" color="custom-purple">
+                    <v-container fluid pa-0>
+                      <v-layout pa-0 class="card-header-wrp">
+                        <v-flex class="text-md-center card-header">
+                          Общие
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                    <v-form v-model="valid">
 
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Наименование проекта"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="lastname"
+                              label="Тип проекта"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="email"
+                              label="Статус проекта"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              color="#75CACF"
+                              v-model="firstname"
+                              readonly
+                              label="Дата открытия"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="lastname"
+                              readonly
+                              label="Дата закрытия"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="email"
+                              :rules="emailRules"
+                              label="Куратор проекта"
+                              color="#75CACF"
+                              readonly
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+
+                    </v-form>
+                  </material-card>
+
+
+                  <material-card class="project-card-desc" color="custom-purple">
+                    <v-form>
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs8
+                            >
+                            <v-text-field
+                              readonly
+                              value="u dont know"
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Субъекты проекта"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                          <v-flex
+                            xs4
+                            >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="troubleStatus"
+                              label="Статус проблемности"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+
+                        <v-layout>
+                          <v-flex
+                            xs8
+                            >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Стратегия"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                          <v-flex
+                            xs4
+                            >
+                            <v-text-field
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Причина проблемности"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+                    </v-form>
+                  </material-card>
+
+                  <material-card class="project-card-desc" color="custom-purple">
+                    <v-form v-model="valid">
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              color="#75CACF"
+                              v-model="firstname"
+                              label="Менеджер проекта"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="lastname"
+                              label="Балансодержатель"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              readonly
+                              v-model="email"
+                              label="Текущая задолженность"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+
+                      <v-container>
+                        <v-layout>
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              color="#75CACF"
+                              v-model="firstname"
+                              readonly
+                              label="Задолженность на дату открытия"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="lastname"
+                              readonly
+                              label="Бюджет проекта"
+                              color="#75CACF"
+                              required
+                            ></v-text-field>
+                          </v-flex>
+
+                          <v-flex
+                            xs12
+                            md4
+                          >
+                            <v-text-field
+                              v-model="email"
+                              :rules="emailRules"
+                              label="Фактические расходы"
+                              color="#75CACF"
+                              readonly
+                              required
+                            ></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+
+                    </v-form>
+                  </material-card>
+
+                </v-expansion-panel-content>
+              </v-expansion-panel>
             </v-flex>
 
 
@@ -315,15 +476,15 @@
                 </v-tab-item>
 
                 <v-tab-item>
-                  to risk
+                  <risks/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  Strategy
+                  <strategy/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  Tasks
+                  <tasks/>
                 </v-tab-item>
               </v-tabs-items>
                 
@@ -337,15 +498,21 @@
 </template>
 
 <script>
-  import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
-  import subject  from '../components/projectpage-tabs/subject.vue';
-  import creditcont  from '../components/projectpage-tabs/creditcont.vue';
-  import repaycharts  from '../components/projectpage-tabs/repaycharts.vue';
-  import gurant  from '../components/projectpage-tabs/gurant.vue';
-  import pledgecontracts  from '../components/projectpage-tabs/pledgecontracts.vue';
-  import pledgeobjects  from '../components/projectpage-tabs/pledgeobjects.vue';
-  import budget  from '../components/projectpage-tabs/budget.vue';
-  import * as easings from 'vuetify/es5/util/easing-patterns'
+  import { mapState,
+   mapMutations, 
+   mapActions, 
+   mapGetters }               from 'vuex';
+  import subject              from '../components/projectpage-tabs/subject.vue';
+  import creditcont           from '../components/projectpage-tabs/creditcont.vue';
+  import repaycharts          from '../components/projectpage-tabs/repaycharts.vue';
+  import gurant               from '../components/projectpage-tabs/gurant.vue';
+  import pledgecontracts      from '../components/projectpage-tabs/pledgecontracts.vue';
+  import pledgeobjects        from '../components/projectpage-tabs/pledgeobjects.vue';
+  import budget               from '../components/projectpage-tabs/budget.vue';
+  import risks                from '../components/projectpage-tabs/risks.vue';
+  import strategy             from '../components/projectpage-tabs/strategy.vue';
+  import tasks                from '../components/projectpage-tabs/tasks.vue';
+  import * as easings         from 'vuetify/es5/util/easing-patterns'
 
    export default {
     
@@ -442,7 +609,10 @@
       gurant,
       pledgecontracts,
       pledgeobjects,
-      budget
+      budget,
+      risks,
+      strategy,
+      tasks
 	  },
     methods: {
       ...mapActions({
