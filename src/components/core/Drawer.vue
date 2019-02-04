@@ -41,7 +41,7 @@
                     class="filter-green mainMenu-filter"
                     tag="v-list"
                     column>
-              <v-expansion-panel>
+              <v-expansion-panel class="filter-paddings">
                 <v-expansion-panel-content
                     v-for="(filter, i) in filters"
                     :key="i"
@@ -50,7 +50,7 @@
                   <v-list-tile
                     slot="header"
                     avatar
-                    class="v-list-item"
+                    class="v-list-item filter-wrp"
                   >
                     <v-list-tile-action>
                       <v-icon color="#91AE61">{{filter.icon}}</v-icon>
@@ -191,6 +191,13 @@
 </script>
 
 <style lang="scss">
+  .filter-wrp{
+    margin: 5px 15px 0;
+  }
+  .filter-paddings{
+    padding: 10px 0 !important;
+  }
+  
     #app-drawer {
       font-family: "Roboto";
       box-shadow: unset !important;
@@ -207,9 +214,12 @@
             flex-direction: column;
             justify-content: flex-start;
             padding: 15px 0;
+            .mainMenu-item{
+              margin: 5px 15px 0;
+            }
             .mainMenu-item a,i{
               color: #495057;
-              padding: 5px 15px !important;
+              padding: 3px 15px !important;
             }
           }
           
@@ -232,6 +242,7 @@
           }
         }
         .v-list__tile {
+            padding: 5px 15px;
             border-radius: 4px;
 
             &--buy {

@@ -8,7 +8,7 @@
         <v-layout justify-center wrap>
             
             <v-flex md12>
-                  <!-- Заглушка для ширины. спешил -->
+                  <!-- Заглушка для ширины. начало -->
                   <material-card id="placeholderWidth" class="project-card-desc" color="custom-purple">
                     <v-form v-model="valid">
 
@@ -55,7 +55,7 @@
 
                     </v-form>
                   </material-card>
-              
+                  <!-- Заглушка для ширины. конец -->
               
               
               
