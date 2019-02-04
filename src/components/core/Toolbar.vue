@@ -48,7 +48,7 @@
             <div class="tb-item tb-select toolbar-getmoney">
               <v-badge
                 color="white"
-                v-model="show"
+                
               >
                 <span style="color:#75CACF; font-size: 10px;" slot="badge">8</span>
                 <v-select

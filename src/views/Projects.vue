@@ -291,28 +291,27 @@
                 
 
                 <v-tab-item>
-                  {{test}}
-                  credit contract
+                  <creditcont/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  charts of repayment
+                  <repaycharts/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  guarantors contracts
+                  <gurant/>
                 </v-tab-item>
                 
                 <v-tab-item>
-                  pledge contracts
+                  <pledgecontracts/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  pledge objects
+                  <pledgeobjects/>
                 </v-tab-item>
 
                 <v-tab-item>
-                  balance
+                  <budget/>
                 </v-tab-item>
 
                 <v-tab-item>
@@ -340,6 +339,12 @@
 <script>
   import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
   import subject  from '../components/projectpage-tabs/subject.vue';
+  import creditcont  from '../components/projectpage-tabs/creditcont.vue';
+  import repaycharts  from '../components/projectpage-tabs/repaycharts.vue';
+  import gurant  from '../components/projectpage-tabs/gurant.vue';
+  import pledgecontracts  from '../components/projectpage-tabs/pledgecontracts.vue';
+  import pledgeobjects  from '../components/projectpage-tabs/pledgeobjects.vue';
+  import budget  from '../components/projectpage-tabs/budget.vue';
   import * as easings from 'vuetify/es5/util/easing-patterns'
 
    export default {
@@ -431,7 +436,13 @@
       },
     },
     components: {
-		  subject
+		  subject,
+      creditcont,
+      repaycharts,
+      gurant,
+      pledgecontracts,
+      pledgeobjects,
+      budget
 	  },
     methods: {
       ...mapActions({
@@ -445,21 +456,21 @@
       }
     },
     mounted(){
-      if(this.scrolled === false){
-        let elem = document.getElementsByClassName("v-content__wrap");
-        elem[0].addEventListener('scroll', (e)=>{
-          if(e.target.scrollTop > this.scrollH){
-            console.log("riding to the bottom");
-            let subElem = document.getElementById("tabsAnchor");
-            subElem.scrollIntoView();
-          } else {
-            console.log("riding to the top")
-          }
+      // if(this.scrolled === false){
+      //   let elem = document.getElementsByClassName("v-content__wrap");
+      //   elem[0].addEventListener('scroll', (e)=>{
+      //     if(e.target.scrollTop > this.scrollH){
+      //       console.log("riding to the bottom");
+      //       let subElem = document.getElementById("tabsAnchor");
+      //       subElem.scrollIntoView({behavior: "smooth", block: "center"});
+      //     } else {
+      //       console.log("riding to the top")
+      //     }
           
-          this.scrollH = e.target.scrollTop
+      //     this.scrollH = e.target.scrollTop
         
-        },false);
-      }
+      //   },false);
+      // }
     },
     created () {
       //this.loadProjects()
