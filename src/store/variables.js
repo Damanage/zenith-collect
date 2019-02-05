@@ -1,14 +1,14 @@
-export const baseUrl = 'http://212.8.237.131:9000/'
+export const baseUrl = 'http://127.0.0.1:9000/'
 import Vue from 'vue'
 import Axios from 'axios'
 
 export const Utils = Object.freeze({
-  // buildHeaders: function (auth) {
-  //   let headers = {}
-  //   headers[auth.header] = auth.token
-  //   headers['Content-Type'] = 'application/json'
-  //   return headers
-  // },
+  buildHeaders: function (auth) {
+    let headers = {}
+    headers[auth.header] = auth.token
+    headers['Content-Type'] = 'application/json'
+    return headers
+  },
   processError (error) {
     let text = error.stack || error
     let serverError = null

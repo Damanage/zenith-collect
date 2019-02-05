@@ -1,7 +1,17 @@
 export default [
   {
+    path: '/home',
+    view: 'Home',
+    name: 'Главная',
+  },
+  {
     path: '/projects',
     view: 'Projects',
+    name: 'Проекты',
+  },
+  {
+    path: '/allprojects',
+    view: 'AllProjects',
     name: 'Проекты',
   },
   {

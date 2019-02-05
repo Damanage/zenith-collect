@@ -12,5 +12,5 @@ export default {
   project: {},
   npas: [],
   npa: {},
-  loggedIn: true
+  loggedIn: false
 }

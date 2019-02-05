@@ -68,7 +68,7 @@ export default {
     project.date_open = Utils.dateFromString(project.date_open);
     project.date_close = Utils.dateFromString(project.date_close);
 
-    let updated = (await Utils.POST('project/', project).catch(error => {
+    let updated = (await Utils.POST('api/v1/project/', project).catch(error => {
       let e = Utils.processError(error);
       context.commit("showMessage", e);
     })).data;

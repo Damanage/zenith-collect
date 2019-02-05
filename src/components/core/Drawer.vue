@@ -92,9 +92,19 @@
     data: () => ({
       links: [
         {
-          to: '/projects',
+          to: '/home',
           icon: 'mdi-home',
-          text: 'Домой'
+          text: 'Главная'
+        },
+        {
+          to: '/projects',
+          icon: 'mdi-animation-outline',
+          text: 'Проекты'
+        },
+        {
+          to: '/allprojects',
+          icon: 'mdi-archive',
+          text: 'Все Проекты'
         },
         {
           to: '/contacts',

@@ -1,6 +1,7 @@
 module.exports = {
-  publicPath: '',
+  publicPath: '/',
   devServer: {
-    disableHostCheck: true
+    disableHostCheck: true,
+    // proxy: 'http://localhost:9000'
   }
 }

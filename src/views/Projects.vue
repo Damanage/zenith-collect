@@ -1,7 +1,7 @@
 <template>
   
     <v-container
-            
+            class="projects-wrp"
             fluid
             grid-list-xl pa-3
           >
@@ -550,7 +550,9 @@
     margin-bottom: 4px;
     opacity: 0.5;
   }
-
+  .projects-wrp{
+    margin-bottom: 20px;
+  }
   .theme--light.v-expansion-panel .collapse-header {
     background-color: transparent;
     .v-expansion-panel__header{
