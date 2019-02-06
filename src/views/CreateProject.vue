@@ -60,7 +60,13 @@ export default {
     }),
     methods: {
         ...mapActions({
-            saveProject: 'saveProject'
+            saveProject: 'saveProject',
+            addPlaceholder: 'addPlaceholder',
+            addToProjects: 'addToProjects'
+        }),
+        ...mapGetters({
+            getProject: 'getProject',
+            getProjects: 'getProjects'
         }),
         getFormValues (submitEvent) {
             let index = 0;
@@ -72,8 +78,8 @@ export default {
                 "project_status": null,
                 "date_open": null,
                 "date_close": null,
-                "curator": null,
-                "manager": null,
+                "curator_id": null,
+                "manager_id": null,
                 "debt": null,
                 "balance_holder": null,
                 "problem_status": null,
@@ -81,8 +87,24 @@ export default {
                 "fact_expenses": null,
                 "current_debt": null
             };
+            let testProject = {
+                "project_name": "Zenith test",
+                "project_type": "suck",
+                "project_status": "failed",
+                "date_open": "10.11.2019",
+                "date_close": "10.11.2019",
+                "curator_id": 1,
+                "manager_id": 1,
+                "debt": 18000,
+                "balance_holder": "Big bad wolf",
+                "problem_status": "p-status",
+                "problem_reason": "p-reason",
+                "fact_expenses": 13,
+                "current_debt": 19000
+            }
             for(let iterable in inputsArray){
                 if(inputsArray[iterable].value){
+                    
                     valuesArray.push(inputsArray[iterable].value);
                 }
                 else {
@@ -90,16 +112,24 @@ export default {
                 }
             }
             for(let iterable in newProject){
+                if(newProject[iterable] = "id"){
+                    newProject[iterable] = index;
+                }
                 newProject[iterable] = valuesArray[index]
                 index++;
             }
             newProject.debt = parseInt(newProject.debt, 10);
             newProject.fact_expenses = parseInt(newProject.fact_expenses, 10);
             newProject.current_debt = parseInt(newProject.current_debt, 10);
+            newProject.curator_id = parseInt(newProject.curator_id, 10);
+            newProject.manager_id = parseInt(newProject.manager_id, 10);
             index = 0;
-            console.log(newProject)
-            console.log(JSON.stringify(newProject))
+            console.log("newProj", testProject)
+            // console.log(JSON.stringify(newProject))
+            
             this.saveProject(newProject)
+            // this.addPlaceholder(newProject);
+            // this.addToProjects(this.getProject());
         }
     }
 }
