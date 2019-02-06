@@ -184,11 +184,11 @@
                                             :headers="ul_headers"
                                             :items="project.uls"
                                             :no-data-text="'Ничего не найдено'"
-                                            hide-actions>
+                                            hide-actions
+                                    >
                                         <template slot="items" slot-scope="props">
                                             <td class="justify-center pa-0">
                                                 <v-icon color="primary" @click="editItem(props.item)">mdi-pencil-circle-outline</v-icon>
-
                                             </td>
                                             <td>{{ props.item.opf }}</td>
                                             <td>{{ props.item.short_name }}</td>
