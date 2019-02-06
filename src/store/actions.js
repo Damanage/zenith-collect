@@ -112,5 +112,13 @@ export default {
       })).data;
     this._vm.$localStorage.set("auth", JSON.stringify(authReq));
     context.commit("logIn", authReq);
+  },
+
+  async addPlaceholder(context, project){
+    context.commit("setProject", project);
+    
+  },
+  async addToProjects(context, project){
+    context.commit("setToProjects", project)
   }
 }

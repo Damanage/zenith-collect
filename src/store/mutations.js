@@ -61,5 +61,12 @@ export default {
   setNpa (state, npa) {
     state.npa = {};
     Object.assign(state.npa, npa);
+  },
+
+  //placeholders section
+  setToProjects(state, project){
+    
+    state.projects.push(project);
+    
   }
 }

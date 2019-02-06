@@ -20,6 +20,11 @@ export default [
     name: 'Карточка Проекта',
   },
   {
+    path: '/project/:id',
+    view: 'Projects',
+    name: 'Карточка Проекта ',
+  },
+  {
     path: '/contacts',
     name: 'ФЛ',
     view: 'Contacts'

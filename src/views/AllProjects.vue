@@ -31,22 +31,33 @@
                     </v-flex>
                     <v-data-table
                             :headers="headers"
-                            :items="contacts"
+                            :items="projects"
                             :rows-per-page-text="'Страницы'"
                             :no-data-text="'Ничего не найдено'"
                             :rows-per-page-items="rowsPerPage">
-                        <template slot="items" slot-scope="props">
-                            <td class="justify-center pa-0">
-                                <v-icon color="primary" @click="editItem(props.item)">mdi-pencil-circle-outline</v-icon>
+                        <template slot="items" slot-scope="props" >
+                            
+                            <tr @click="toProject(props.index)">
+                                
+                                <td class="justify-center pa-0">
+                                    <v-icon color="primary" @click="editItem(props.index)">mdi-pencil-circle-outline</v-icon>
 
-                            </td>
-                            <td>{{ props.item.sur_name }}</td>
-                            <td>{{ props.item.name }}</td>
-                            <td>{{ props.item.birth_date | date }}</td>
-                            <td>{{ props.item.place_of_collection }}</td>
+                                </td>
+                                <td>{{props.index}}</td>
+                                <td>{{ props.item.project_name }}</td>
+                                <td>{{ props.item.project_status }}</td>
+                                <td>{{ props.item.date_open }}</td>
+                                <td>{{ props.item.date_close }}</td>
+                                <td>{{ props.item.curator }}</td>
+                                <td>{{ props.item.manager }}</td>
+                                <td>{{ props.item.debt }}</td>
+                                <td>{{ props.item.balance_holder }}</td>
+                                <td>бюджет</td>
+                            </tr>
                         </template>
                     </v-data-table>
                 </material-card>
+                
             </v-flex>
         </v-layout>
     </v-container>
@@ -79,11 +90,28 @@
             { img: 'messenger.png', title: 'Messenger' },
             { img: 'google.png', title: 'Google+' }
         ],
+        projects: []
         
       }
     },
     components: {
         createproject
+    },
+    methods: {
+        ...mapGetters({
+            getProject: 'getProject',
+            getProjects: 'getProjects'
+        }),
+        toProject(project) {
+            this.$router.push('/project/'+project);
+        }
+    },
+    beforeMount(){
+        this.projects = this.getProjects()
+    },
+    beforeUpdate(){
+        this.projects = this.getProjects()
+
     }
     
   }

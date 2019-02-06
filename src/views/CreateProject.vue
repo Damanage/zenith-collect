@@ -60,7 +60,13 @@ export default {
     }),
     methods: {
         ...mapActions({
-            saveProject: 'saveProject'
+            saveProject: 'saveProject',
+            addPlaceholder: 'addPlaceholder',
+            addToProjects: 'addToProjects'
+        }),
+        ...mapGetters({
+            getProject: 'getProject',
+            getProjects: 'getProjects'
         }),
         getFormValues (submitEvent) {
             let index = 0;
@@ -97,9 +103,14 @@ export default {
             newProject.fact_expenses = parseInt(newProject.fact_expenses, 10);
             newProject.current_debt = parseInt(newProject.current_debt, 10);
             index = 0;
-            console.log(newProject)
-            console.log(JSON.stringify(newProject))
-            this.saveProject(newProject)
+            // console.log(newProject)
+            // console.log(JSON.stringify(newProject))
+            
+            // this.saveProject(newProject)
+            this.addPlaceholder(newProject);
+            this.addToProjects(this.getProject());
+            console.log(this.getProject())
+            console.log(this.getProjects())
         }
     }
 }

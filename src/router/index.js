@@ -67,7 +67,7 @@ let unwatcher = store.watch(state => {
   },
   (newValue) => {
     if (newValue) {
-      router.push('/projects');
+      router.push('/home');
     } else {
       router.push('/login');
     }
