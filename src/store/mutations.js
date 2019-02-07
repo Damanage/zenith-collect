@@ -63,10 +63,8 @@ export default {
     Object.assign(state.npa, npa);
   },
 
-  //placeholders section
-  setToProjects(state, project){
-    
-    state.projects.push(project);
-    
+  setBudget(state, budget){
+    state.budget = {};
+    Object.assign(state.budget, budget)
   }
 }

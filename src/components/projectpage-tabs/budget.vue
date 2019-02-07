@@ -57,18 +57,18 @@
                             :rows-per-page-text="'Страницы'"
                             :no-data-text="'Ничего не найдено'"
                             :rows-per-page-items="rowsPerPage">
-                        <template slot="items" slot-scope="props">
+                        <template slot="budget" slot-scope="props">
                             <td class="justify-center pa-0">
                                 <v-icon color="primary" @click="editItem(props.item)">mdi-pencil-circle-outline</v-icon>
                             </td>
-                            <td>1</td>
+                            <td>{{props.item}}</td>
                             <td>2</td>
                             <td>3</td>
                             <td>4</td>
                             <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
+                            <td>{{props.item.budget_q1}}</td>
+                            <td>{{props.item.budget_q2}}</td>
+                            <td>{{props.item.budget_q3}}</td>
                         </template>
                     </v-data-table>
                 </material-card>
@@ -79,11 +79,16 @@
 </template>
 <script>
     import BudgetModify from '../../views/BudgetModify.vue';
-
+    import { mapState,
+        mapMutations, 
+        mapActions, 
+        mapGetters 
+    } from 'vuex';
     export default {
         
         data () {
             return {
+                budget: {},
                 dialog: false,
                 sheet: false,
                 rowsPerPage: [10, 20, 30, 100, { 'text': 'Все', 'value': -1 }],
@@ -115,7 +120,21 @@
             },
             onProjectCreate () {
                 this.dialog = false;
-            }
+            },
+            ...mapActions({
+                saveBudget: 'saveBudget',
+                saveProject: 'saveProject',
+                loadProjects: 'loadProjects'
+            }),
+            ...mapGetters({
+                getProject: 'getProject',
+                getProjects: 'getProjects',
+                getBudget: 'getBudget'
+            }),
+        },
+        created () {
+            this.budget = this.getBudget();
+            console.log(this.budget)
         }
     }
     

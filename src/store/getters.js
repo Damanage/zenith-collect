@@ -28,5 +28,8 @@ export default {
   },
   getNpa(state) {
     return state.npa;
+  },
+  getBudget(state) {
+    return state.budget
   }
 }

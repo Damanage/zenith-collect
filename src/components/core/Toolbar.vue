@@ -110,7 +110,10 @@
 <script>
 
 import {
-  mapMutations
+  mapState,
+  mapMutations,
+  mapActions,
+  mapGetters
 } from 'vuex';
 
 import { EventBus, EventName} from '@/utils/eventbus';
@@ -145,6 +148,9 @@ export default {
   },
 
   computed: {
+    ...mapGetters({
+      project: 'getProject'
+    }),
   },
 
   mounted () {

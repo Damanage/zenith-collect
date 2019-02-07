@@ -121,11 +121,21 @@ export default {
     context.commit("logIn", authReq);
   },
 
-  async addPlaceholder(context, project){
-    context.commit("setProject", project);
-    
+  async saveBudget(context, budget){
+    let updatedBudget = (await Utils.POST('api/v1/budget/', budget).catch(error => {
+      let e = Utils.processError(error);
+      context.commit("showMessage", e);
+    })).data;
+    if (updatedBudget && updatedBudget.id === budget.id)
+    context.commit("showMessage", {msg: "Успешно сохранено", type: 2});
+    context.commit("setBudget", updatedBudget);
   },
-  async addToProjects(context, project){
-    context.commit("setToProjects", project)
-  }
+  // At work
+  // async loadBudget(context, id) {
+  //   let found = (await Utils.GET(`/api/v1/budget/${id}/`).catch(error => {
+  //     let e = Utils.processError(error);
+  //     context.commit("showMessage", e);
+  //   })).data;
+  //   context.commit("setNpa", found);
+  // }
 }

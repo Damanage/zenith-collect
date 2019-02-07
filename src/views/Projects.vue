@@ -60,7 +60,7 @@
 
                 <v-expansion-panel>
                     <v-expansion-panel-content class="collapse-header">
-                        <div slot="header">Карточка проекта</div>
+                        <div slot="header">Проект: {{project.project_name}}</div>
 
                         <material-card class="project-card-desc" color="custom-purple">
                             <v-container fluid pa-0>

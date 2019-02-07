@@ -12,5 +12,6 @@ export default {
   project: {},
   npas: [],
   npa: {},
+  budget: {},
   loggedIn: true
 }

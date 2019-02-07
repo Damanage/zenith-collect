@@ -51,13 +51,13 @@
 import { mapState,
    mapMutations, 
    mapActions, 
-   mapGetters }               from 'vuex';
+   mapGetters } from 'vuex';
 export default {
     
     data: () => ({
         dialog: false,
         fields2:{
-            fieldSet1: ["Название статьи","Фактическая сумма","Бюджет на проект"],
+            fieldSet1: ["Код бюджета","Название статьи","Фактическая сумма","Бюджет на проект"],
             fieldSet2: ["1кв", "чб", "согласовано 1кв"],
             fieldSet3: ["2кв", "чб", "согласовано 2кв"],
             fieldSet4: ["3кв", "чб", "согласовано 3кв"],
@@ -70,47 +70,48 @@ export default {
           this.$emit('project-cancel', {});
         },
         ...mapActions({
+            saveBudget: 'saveBudget',
             saveProject: 'saveProject',
             loadProjects: 'loadProjects'
         }),
         ...mapGetters({
             getProject: 'getProject',
-            getProjects: 'getProjects'
+            getProjects: 'getProjects',
+            getBudget: 'getBudget'
         }),
         getFormValues (submitEvent) {
             let index = 0;
             let inputsArray = submitEvent.target.elements;
             let valuesArray= [];
             let newProject = {
-                "project_name": null,
-                "project_type": null,
-                "project_status": null,
-                "date_open": null,
-                "date_close": null,
-                "curator_id": null,
-                "manager_id": null,
-                "debt": null,
-                "balance_holder": null,
-                "problem_status": null,
-                "problem_reason": null,
+                "budget_code": null,
+                "budget_item": null,
                 "fact_expenses": null,
-                "current_debt": null
+                "budget_total": null,
+                "budget_q1": null,
+                "approver_q1": null,
+                "budget_q2": null,
+                "approver_q2": null,
+                "budget_q3": null,
+                "approver_q3": null,
+                "budget_q4": null,
+                "approver_q4": null,
+                "comment": null,
+                "project": null,     
             };
             let testProject = {
-                "project_name": "Zenith test",
-                "project_type": "suck",
-                "project_status": "failed",
-                "date_open": "10.11.2019",
-                "date_close": "10.11.2019",
-                "curator_id": 1,
-                "manager_id": 1,
-                "debt": 18000,
-                "balance_holder": "Big bad wolf",
-                "problem_status": "p-status",
-                "problem_reason": "p-reason",
-                "fact_expenses": 13,
-                "current_debt": 19000
+                "budget_code": "test-code",
+                "budget_item": "test-item",
+                "fact_expenses": 111111,
+                "budget_total": 22222,
+                "budget_q1": 1111,
+                "budget_q2": 1111,
+                "budget_q3": 1111,
+                "budget_q4": 111,
+                "comment": "must be comment",
+                
             }
+            
             for(let iterable in inputsArray){
                 if(inputsArray[iterable].value){
                     
@@ -127,13 +128,23 @@ export default {
                 newProject[iterable] = valuesArray[index]
                 index++;
             }
-            newProject.debt = parseInt(newProject.debt, 10);
-            newProject.fact_expenses = parseInt(newProject.fact_expenses, 10);
-            newProject.current_debt = parseInt(newProject.current_debt, 10);
-
-            this.saveProject(newProject);
-            this.loadProjects();
-            this.$emit('project-create', {});
+            
+            newProject.fact_expenses    = parseInt(newProject.fact_expenses, 10);
+            newProject.budget_total     = parseInt(newProject.budget_total, 10);
+            newProject.budget_q1        = parseInt(newProject.budget_q1, 10);
+            newProject.budget_q2        = parseInt(newProject.budget_q2, 10);
+            newProject.budget_q3        = parseInt(newProject.budget_q3, 10);
+            newProject.budget_q4        = parseInt(newProject.budget_q4, 10);
+            // newProject.approver_q1        = parseInt(newProject.approver_q1, 10);
+            // newProject.approver_q2        = parseInt(newProject.approver_q2, 10);
+            // newProject.approver_q3        = parseInt(newProject.approver_q3, 10);
+            // newProject.approver_q4        = parseInt(newProject.approver_q4, 10);
+            // newProject.project          = parseInt(this.$route.params.id);
+            console.log(testProject)
+            this.saveBudget(testProject);
+            console.log(this.getBudget())
+            // this.loadProjects();
+            // this.$emit('project-create', {});
         }
     }
 }
