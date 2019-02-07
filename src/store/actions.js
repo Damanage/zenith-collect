@@ -69,7 +69,7 @@ export default {
       let e = Utils.processError(error);
       context.commit("showMessage", e);
     })).data;
-    context.commit("setProject", project);console.log(project);
+    context.commit("setProject", project);
   },
   async saveProject(context, project) {
     project.date_open = Utils.dateFromString(project.date_open);

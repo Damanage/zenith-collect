@@ -73,7 +73,7 @@
                 title="Проекты">
             <v-flex class="subject-root" slot="actions" ma-0 pa-0>
                 <div class="left-side">
-                    <v-btn-toggle v-model="physycalBtn" active-class="custom-blue" multiple>
+                    <v-btn-toggle  active-class="custom-blue" multiple>
                         <v-btn flat>
                             <v-icon>mdi-refresh</v-icon>
                         </v-btn>

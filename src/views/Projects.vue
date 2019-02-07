@@ -81,10 +81,16 @@
                                             <v-text-field
                                                     readonly
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="project.project_name"
                                                     label="Наименование проекта"
                                                     required
                                             ></v-text-field>
+                                            <!-- <div class="twrp">
+                                              <h6>Наименование проекта</h6>
+                                              <p>
+                                                {{project.project_name}}
+                                              </p>
+                                            </div> -->
                                         </v-flex>
 
                                         <v-flex
@@ -93,7 +99,7 @@
                                         >
                                             <v-text-field
                                                     readonly
-                                                    v-model="lastname"
+                                                    v-model="project.project_name"
                                                     label="Тип проекта"
                                                     color="#75CACF"
                                                     required
@@ -106,7 +112,7 @@
                                         >
                                             <v-text-field
                                                     readonly
-                                                    v-model="email"
+                                                    v-model="project.project_status"
                                                     label="Статус проекта"
                                                     color="#75CACF"
                                                     required
@@ -123,7 +129,7 @@
                                         >
                                             <v-text-field
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="project.date_open"
                                                     readonly
                                                     label="Дата открытия"
                                                     required
@@ -135,7 +141,7 @@
                                                 md4
                                         >
                                             <v-text-field
-                                                    v-model="lastname"
+                                                    v-model="project.date_close"
                                                     readonly
                                                     label="Дата закрытия"
                                                     color="#75CACF"
@@ -148,8 +154,7 @@
                                                 md4
                                         >
                                             <v-text-field
-                                                    v-model="email"
-                                                    :rules="emailRules"
+                                                    v-model="project.curator_id"
                                                     label="Куратор проекта"
                                                     color="#75CACF"
                                                     readonly
@@ -174,7 +179,7 @@
                                                     readonly
                                                     value="u dont know"
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="plh"
                                                     label="Субъекты проекта"
                                                     required
                                             ></v-text-field>
@@ -185,7 +190,7 @@
                                             <v-text-field
                                                     readonly
                                                     color="#75CACF"
-                                                    v-model="troubleStatus"
+                                                    v-model="project.problem_status"
                                                     label="Статус проблемности"
                                                     required
                                             ></v-text-field>
@@ -199,7 +204,7 @@
                                             <v-text-field
                                                     readonly
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="plh"
                                                     label="Стратегия"
                                                     required
                                             ></v-text-field>
@@ -209,7 +214,7 @@
                                         >
                                             <v-text-field
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="project.problem_reason"
                                                     label="Причина проблемности"
                                                     required
                                             ></v-text-field>
@@ -230,7 +235,7 @@
                                             <v-text-field
                                                     readonly
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="project.curator_id"
                                                     label="Менеджер проекта"
                                                     required
                                             ></v-text-field>
@@ -242,7 +247,7 @@
                                         >
                                             <v-text-field
                                                     readonly
-                                                    v-model="lastname"
+                                                    v-model="project.manager_id"
                                                     label="Балансодержатель"
                                                     color="#75CACF"
                                                     required
@@ -255,7 +260,7 @@
                                         >
                                             <v-text-field
                                                     readonly
-                                                    v-model="email"
+                                                    v-model="project.current_debt"
                                                     label="Текущая задолженность"
                                                     color="#75CACF"
                                                     required
@@ -272,7 +277,7 @@
                                         >
                                             <v-text-field
                                                     color="#75CACF"
-                                                    v-model="firstname"
+                                                    v-model="project.debt"
                                                     readonly
                                                     label="Задолженность на дату открытия"
                                                     required
@@ -284,7 +289,7 @@
                                                 md4
                                         >
                                             <v-text-field
-                                                    v-model="lastname"
+                                                    v-model="plh"
                                                     readonly
                                                     label="Бюджет проекта"
                                                     color="#75CACF"
@@ -297,8 +302,7 @@
                                                 md4
                                         >
                                             <v-text-field
-                                                    v-model="email"
-                                                    :rules="emailRules"
+                                                    v-model="project.fact_expenses"
                                                     label="Фактические расходы"
                                                     color="#75CACF"
                                                     readonly
@@ -412,6 +416,8 @@
 
     data () {
       return {
+        plh: "Не назначено. заглушка",
+        // project:[],
         scrollH: 0,
         scrolled: false,
         type: 'number',
@@ -480,7 +486,7 @@
 
     computed: {
       ...mapGetters({
-        //projects: 'getProjects'
+        project: 'getProject'
       }),
       target () {
         // const value = this[this.type]
@@ -508,7 +514,7 @@
       strategy,
       tasks
     },
-    methods: {
+    methods: { 
       ...mapActions({
         loadProject: 'loadProject'
       }),
@@ -517,28 +523,24 @@
       },
       debug (tst) {
         console.log(tst)
+      },
+      getItem(){
+        let prjUrl      = window.location.href.match( /project\/[0-9]/ig )[0];
+        let prjUrlId    = parseInt(prjUrl.match(/[0-9]/ig)[0])
+        let id          = this.$route.params.id;
+        
+        console.log(id)
+        if(id){
+          this.loadProject(id);
+        } else {
+          this.loadProject(prjUrlId);
+        }
+        
       }
     },
     mounted () {
-      // if(this.scrolled === false){
-      //   let elem = document.getElementsByClassName("v-content__wrap");
-      //   elem[0].addEventListener('scroll', (e)=>{
-      //     if(e.target.scrollTop > this.scrollH){
-      //       console.log("riding to the bottom");
-      //       let subElem = document.getElementById("tabsAnchor");
-      //       subElem.scrollIntoView({behavior: "smooth", block: "center"});
-      //     } else {
-      //       console.log("riding to the top")
-      //     }
-
-      //     this.scrollH = e.target.scrollTop
-
-      //   },false);
-      // }
-    },
-    created () {
-      let id = this.$route.params.id;
-      this.loadProject(id);
+      this.getItem();
+      console.log("mounted",this.project)
     }
   }
 </script>

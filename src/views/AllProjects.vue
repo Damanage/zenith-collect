@@ -6,6 +6,7 @@
             grid-list-xl pa-3>
         <v-layout justify-center wrap>
             <v-flex md12>
+            
                 <material-card
                         color="filter-green"
                         title="Проекты">
@@ -35,13 +36,13 @@
                             :rows-per-page-items="rowsPerPage">
                         <template slot="items" slot-scope="props">
 
-                            <tr @click="toProject(props.index)">
+                            <tr @click="toProject(props.item.id)">
 
                                 <td class="justify-center pa-0">
                                     <v-icon color="primary" @click="editItem(props.index)">mdi-pencil-circle-outline</v-icon>
 
                                 </td>
-                                <td>{{props.index}}</td>
+                                <td>{{ props.item.id }}</td>
                                 <td>{{ props.item.project_name }}</td>
                                 <td>{{ props.item.project_status }}</td>
                                 <td>{{ props.item.date_open }}</td>

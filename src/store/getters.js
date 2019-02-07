@@ -20,6 +20,7 @@ export default {
     return state.projects;
   },
   getProject(state) {
+    console.log("getters.js -23ln",state.project);
     return state.project;
   },
   getNpas(state) {
