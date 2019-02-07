@@ -26,13 +26,14 @@
                                     required
                                 ></v-text-field>
                                 </v-flex>
-
-
                             </v-layout>
                         </v-container>
-                        <v-btn color="weed-green" type="submit">
+                        <v-btn color="warning" type="submit">
                             <v-icon>mdi-check</v-icon>
                             Создать проект
+                        </v-btn>
+                        <v-btn color="rgba(0, 0, 0, 0.67)" @click="cancel">
+                            Отменить
                         </v-btn>
                     </v-form>
                 </material-card>
@@ -50,6 +51,7 @@ import { mapState,
 export default {
     
     data: () => ({
+        dialog: false,
         fields2:{
             fieldSet1: ["Название проекта", "Тип проекта", "Статус проекта"],
             fieldSet2: ["Дата открытия", "Дата закрытия", "Куратор"],
@@ -59,10 +61,12 @@ export default {
         },
     }),
     methods: {
+        cancel (){
+          this.$emit('project-cancel', {});
+        },
         ...mapActions({
             saveProject: 'saveProject',
-            addPlaceholder: 'addPlaceholder',
-            addToProjects: 'addToProjects'
+            loadProjects: 'loadProjects'
         }),
         ...mapGetters({
             getProject: 'getProject',
@@ -121,15 +125,10 @@ export default {
             newProject.debt = parseInt(newProject.debt, 10);
             newProject.fact_expenses = parseInt(newProject.fact_expenses, 10);
             newProject.current_debt = parseInt(newProject.current_debt, 10);
-            newProject.curator_id = parseInt(newProject.curator_id, 10);
-            newProject.manager_id = parseInt(newProject.manager_id, 10);
-            index = 0;
-            console.log("newProj", testProject)
-            // console.log(JSON.stringify(newProject))
-            
-            this.saveProject(newProject)
-            // this.addPlaceholder(newProject);
-            // this.addToProjects(this.getProject());
+
+            this.saveProject(newProject);
+            this.loadProjects();
+            this.$emit('project-create', {});
         }
     }
 }

@@ -38,7 +38,7 @@
                     </v-flex>
                     <v-data-table
                             :headers="orgHeaders"
-                            
+
                             :rows-per-page-text="'Страницы'"
                             :no-data-text="'Ничего не найдено'"
                             :rows-per-page-items="rowsPerPage">

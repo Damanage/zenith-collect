@@ -1,5 +1,5 @@
 <template>
-	<div class="subj">
+    <div class="subj">
         <material-card
                 color="filter-green"
                 title="Проекты">
@@ -23,19 +23,31 @@
                             Default Slot
                         </v-input> -->
                     </div>
-                    
+
                     <div class="buttons">
-                        <v-btn class="weed-green" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-plus</v-icon>Добавить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-pencil</v-icon>Изменить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-close</v-icon>Удалить</v-btn>
+                        <v-btn class="weed-green" small color="white">
+                            <v-icon color="white">mdi-content-save</v-icon>
+                            Сохранить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-plus</v-icon>
+                            Добавить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-pencil</v-icon>
+                            Изменить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-close</v-icon>
+                            Удалить
+                        </v-btn>
                     </div>
                 </div>
-                
+
             </v-flex>
             <v-data-table
                     :headers="orgHeaders"
-                    
+                    :items=[]
                     :rows-per-page-text="'Страницы'"
                     :no-data-text="'Ничего не найдено'"
                     :rows-per-page-items="rowsPerPage">
@@ -79,19 +91,31 @@
                             Default Slot
                         </v-input> -->
                     </div>
-                    
+
                     <div class="buttons">
-                        <v-btn class="weed-green" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-plus</v-icon>Добавить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-pencil</v-icon>Изменить</v-btn>
-                        <v-btn flat small color="white"><v-icon color="white">mdi-close</v-icon>Удалить</v-btn>
+                        <v-btn class="weed-green" small color="white">
+                            <v-icon color="white">mdi-content-save</v-icon>
+                            Сохранить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-plus</v-icon>
+                            Добавить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-pencil</v-icon>
+                            Изменить
+                        </v-btn>
+                        <v-btn flat small color="white">
+                            <v-icon color="white">mdi-close</v-icon>
+                            Удалить
+                        </v-btn>
                     </div>
                 </div>
-                
+
             </v-flex>
             <v-data-table
                     :headers="personHeaders"
-                    
+                    :items=[]
                     :rows-per-page-text="'Страницы'"
                     :no-data-text="'Ничего не найдено'"
                     :rows-per-page-items="rowsPerPage">
@@ -111,76 +135,79 @@
             </v-data-table>
         </material-card>
 
-        
-	</div>
+
+    </div>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                rowsPerPage: [10, 20, 30, 100, { 'text': 'Все', 'value': -1 }],
-                orgHeaders: [
-                    { text: '', value: 'action', sortable: false },
-                    {
-                        text: 'Название',
-                        align: 'left',
-                        sortable: true,
-                        value: 'full_name'
-                    },
-                    { text: 'Роль в проекте', value: 'role' },
-                    { text: 'Вид деятельности', value: 'status' },
-                    { text: 'Основной контакт', value: 'main_contact', sortable: true },
-                    { text: 'Основной телефон', value: 'main_phone', sortable: true },
-                    { text: 'E-mail', value: 'email', sortable: false },
-                    { text: 'Город', value: 'city', sortable: false },
-                    { text: 'ОПФ', value: 'opf', sortable: false },
-                    { text: 'ИНН', value: 'inn', sortable: false },
-                    { text: 'ID', value: 'pr-id', sortable: false },
-                ],
-                personHeaders: [
-                    { text: '', value: 'action', sortable: false },
-                    {
-                        text: 'ID',
-                        align: 'left',
-                        sortable: true,
-                        value: 'full_name'
-                    },
-                    { text: 'ФИО', value: 'resp_id' },
-                    { text: 'Роль в проекте', value: 'status' },
-                    { text: 'Дата рождения', value: 'date_open', sortable: true },
-                    { text: 'Паспорт', value: 'date_close', sortable: true },
-                    { text: 'Основной телефон', value: 'comment', sortable: false },
-                    { text: 'E-mail', value: 'problem_status', sortable: false }
-                ],
-                orgBtn: null,
-                physycalBtn: null,
-                dick: "dick"
-            }
-        }
+  export default {
+    data () {
+      return {
+        rowsPerPage: [10, 20, 30, 100, { 'text': 'Все', 'value': -1 }],
+        orgHeaders: [
+          { text: '', value: 'action', sortable: false },
+          {
+            text: 'Название',
+            align: 'left',
+            sortable: true,
+            value: 'full_name'
+          },
+          { text: 'Роль в проекте', value: 'role' },
+          { text: 'Вид деятельности', value: 'status' },
+          { text: 'Основной контакт', value: 'main_contact', sortable: true },
+          { text: 'Основной телефон', value: 'main_phone', sortable: true },
+          { text: 'E-mail', value: 'email', sortable: false },
+          { text: 'Город', value: 'city', sortable: false },
+          { text: 'ОПФ', value: 'opf', sortable: false },
+          { text: 'ИНН', value: 'inn', sortable: false },
+          { text: 'ID', value: 'pr-id', sortable: false },
+        ],
+        personHeaders: [
+          { text: '', value: 'action', sortable: false },
+          {
+            text: 'ID',
+            align: 'left',
+            sortable: true,
+            value: 'full_name'
+          },
+          { text: 'ФИО', value: 'resp_id' },
+          { text: 'Роль в проекте', value: 'status' },
+          { text: 'Дата рождения', value: 'date_open', sortable: true },
+          { text: 'Паспорт', value: 'date_close', sortable: true },
+          { text: 'Основной телефон', value: 'comment', sortable: false },
+          { text: 'E-mail', value: 'problem_status', sortable: false }
+        ],
+        orgBtn: null,
+        physycalBtn: null,
+        dick: 'dick'
+      }
     }
+  }
 </script>
 
 <style lang="scss">
-    .subject-root{
+    .subject-root {
         justify-content: space-between;
         display: flex;
     }
-    .left-side, .right-side{
+
+    .left-side, .right-side {
         display: flex;
         align-items: center;
     }
-    .card-title{
+
+    .card-title {
         font-weight: bold;
         font-size: 13px !important;
     }
-    .v-btn-toggle{
+
+    .v-btn-toggle {
         background: unset !important;
     }
-        
-    
-    .v-btn-toggle--selected{
+
+
+    .v-btn-toggle--selected {
         box-shadow: unset !important;
     }
-        
+
 </style>

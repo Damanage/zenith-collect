@@ -97,11 +97,6 @@
           text: 'Главная'
         },
         {
-          to: '/projects',
-          icon: 'mdi-animation-outline',
-          text: 'Проекты'
-        },
-        {
           to: '/allprojects',
           icon: 'mdi-archive',
           text: 'Все Проекты'
