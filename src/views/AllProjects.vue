@@ -36,7 +36,7 @@
                             :rows-per-page-items="rowsPerPage">
                         <template slot="items" slot-scope="props">
 
-                            <tr @click="toProject(props.item.id)">
+                            <tr class="tr-clickble" @click="toProject(props.item.id)">
 
                                 <td class="justify-center pa-0">
                                     <v-icon color="primary" @click="editItem(props.index)">mdi-pencil-circle-outline</v-icon>
@@ -122,6 +122,9 @@
   }
 </script>
 <style lang="scss">
+    .tr-clickble{
+        cursor: pointer;
+    }
     #all-projects {
     }
 
