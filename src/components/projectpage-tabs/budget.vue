@@ -29,7 +29,22 @@
                             
                             <div class="buttons">
                                 <v-btn class="weed-green" small color="white"><v-icon color="white">mdi-content-save</v-icon>Сохранить</v-btn>
-                                <v-btn flat small color="white"><v-icon color="white">mdi-plus</v-icon>Добавить</v-btn>
+                                
+                                
+                                <v-dialog v-model="dialog">
+                                    <v-btn v-ripple
+                                        slot="activator"
+                                        flat small
+                                    >
+                                        <v-icon>mdi-plus</v-icon>
+                                            Добавить
+                                        </v-btn>
+
+                                    <h3 class="prj-title">Новый план бюджета</h3>
+                                    <div class="prj-wrp">
+                                        <BudgetModify @project-cancel="onProjectCancel" @project-create="onProjectCreate"/>
+                                    </div>
+                                </v-dialog>
                                 <v-btn flat small color="white"><v-icon color="white">mdi-pencil</v-icon>Изменить</v-btn>
                                 <v-btn flat small color="white"><v-icon color="white">mdi-close</v-icon>Удалить</v-btn>
                             </div>
@@ -57,14 +72,20 @@
                         </template>
                     </v-data-table>
                 </material-card>
+                
             </v-flex>
         </v-layout>
     </div>
 </template>
 <script>
+    import BudgetModify from '../../views/BudgetModify.vue';
+
     export default {
+        
         data () {
             return {
+                dialog: false,
+                sheet: false,
                 rowsPerPage: [10, 20, 30, 100, { 'text': 'Все', 'value': -1 }],
                 planned: [
                     { text: '', value: 'action', sortable: false },
@@ -84,6 +105,27 @@
                 ]
                 
             }
+        },
+        components: {
+            BudgetModify
+        },
+        methods: {
+            onProjectCancel () {
+                this.dialog = false;
+            },
+            onProjectCreate () {
+                this.dialog = false;
+            }
         }
     }
+    
 </script>
+<style>
+    .prj-title {
+        color: rgba(0, 0, 0, .54);
+        margin-left: 20px;
+    }
+    .v-dialog {
+        background-color: rgba(233, 233, 234, 0.89);
+    }
+</style>

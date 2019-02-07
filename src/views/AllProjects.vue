@@ -17,8 +17,8 @@
                                    flat small
                             >
                                 <v-icon>mdi-plus</v-icon>
-                                Создать
-                            </v-btn>
+                                    Создать
+                                </v-btn>
 
                             <h3 class="prj-title">Создание нового проекта</h3>
                             <div class="prj-wrp">
